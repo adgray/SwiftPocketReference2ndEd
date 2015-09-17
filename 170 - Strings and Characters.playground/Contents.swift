@@ -1,6 +1,9 @@
-// ------------------------------------------
+// ---------------------------------------------------------------
+// Swift Pocket Reference 2nd Edition by Anthony Gray
+// Code updates at github.com/adgray/
+// ---------------------------------------------------------------
 // Strings and Characters
-// ------------------------------------------
+// ---------------------------------------------------------------
 
 var astring = "Hello"
 var achar: Character = "A"
@@ -67,6 +70,17 @@ let a = "Hi"
 let b = "there"
 let c = "\(a) \(b)"
 
+let valueAsString = String(52.56)
+
+
+
+// ------------------------------------------
+// Conversion of Strings to Numeric Types
+// ------------------------------------------
+
+let sInt = Int("45")
+let sDouble = Double("23.2")!
+
 
 
 // ------------------------------------------
@@ -82,20 +96,25 @@ uString.utf16.count
 uString.unicodeScalars.count
 
 
+print ("\n-character-level access in strings")
 var str = "Swift"
-for i in str.characters
-{
+for i in str.characters {
     print (i)
 }
 
 
+print ("\n-accessing characters by index")
 var idx = str.utf8.startIndex
-while (idx != str.utf8.endIndex)
-{
+while (idx != str.utf8.endIndex) {
     print (str.utf8[idx])
     idx = idx.successor()
 }
 
+let sought = Character("Y")
+if let foundAt = "New York".characters.indexOf(sought)
+{
+    print (sought, "found at position", foundAt)
+}
 
 
 // ------------------------------------------
@@ -104,18 +123,20 @@ while (idx != str.utf8.endIndex)
 
 astring.append(achar)
 astring.append(dogface)
-astring.extend(newString)
+astring.appendContentsOf(newString)
+astring.removeAll(keepCapacity: true)
 
-let separator = "+++"
-var joined = separator.join(["fred", "bill", "mary"])
-"+".join(["a", "b", "c"])
-
-joined.removeAll(keepCapacity: true)
 
 var vowels = "aeiou"
 let epos = vowels.startIndex.successor()
 vowels.removeAtIndex(epos)
 vowels
+
+var city = "New York"
+var s = city.characters.startIndex
+var e = s.advancedBy(3)
+city.removeRange(s...e)
+
 
 vowels.reserveCapacity(256)
 
