@@ -20,7 +20,7 @@ var primes = [1, 3, 5, 7, 11]
 let v = vertex[5]
 
 let vowels = ["A", "E", "I", "O", "U"]
-let consonants = ["B", "C", "D",  "F", "G", "H", "J" /* etc */]
+let consonants = ["B", "C", "D", "F", "G", "H", "J" /* etc */]
 var allLetters = vowels + consonants
 
 
@@ -106,7 +106,7 @@ for (index, value) in locos.enumerate() {
 
 
 // ------------------------------------------
-// Inherited Behaviour
+// Array Inherited Functionality
 // ------------------------------------------
 
 var names = ["John", "Zoe", "Laura", "albert", "Allen"]
@@ -114,7 +114,11 @@ var names = ["John", "Zoe", "Laura", "albert", "Allen"]
 names.contains("John")
 names.contains("Lisa")
 
-let namesCopy = names
+names.dropFirst(2)
+names.dropLast(2)
+
+
+var namesCopy = names
 names.elementsEqual(namesCopy)
 names.elementsEqual(namesCopy.sort())
 
@@ -126,27 +130,57 @@ let flatArray = arrOfArrays.flatMap()
     {$0.map{$0.uppercaseString}}
 flatArray
 
+names.joinWithSeparator("; ")
+
+print ("\n-forEach")
+names.forEach { print($0) }
+
+let pos = names.indexOf("Allen")
 
 let aa2 = names.map { $0.hasPrefix("A") ? $0 : "*" + $0 }
 aa2
 
-let aa3 = names.reduce("") { $0 + $1 }
-aa3
+let aa3 = names.prefix(2)
 
-let aa4 = names.reverse() as Array
+let aa4 = names.reduce("") { $0 + $1 }
 aa4
 
-let aa5 = names.sort() { $0<$1 }
-aa5
+let aa5 = names.reverse()
+print ("\n-reverse")
+aa5.forEach { print ($0) }
 
+let aa6 = names.sort() { $0<$1 }
+aa6
+
+let intArray = [5, 2, 0, 4, 5, 6, 0, 9, 0]
+let aa7 = intArray.split(0, maxSplit: 1)
+let aa8 = intArray.split(0, allowEmptySlices: true)
 
 names.startsWith(["John", "Zoe"])
 names.startsWith(["Allen"])
 
+let aa9 = names.suffix(2)
 
 
 
 
+// ------------------------------------------
+// Slices
+// ------------------------------------------
 
+let someNames = names[1...3]
+someNames.startIndex // returns 1 (not 0)
+someNames.endIndex   // returns 4 (not 3)
+
+// test index consistency
+names[1]      // returns Zoe
+someNames[1]  // returns Zoe
+
+// test mutation causes copy
+names[1] = "Fred"
+someNames[1]  // slice still returns Zoe
+
+names.removeAll()
+someNames // still returns original slice
 
 

@@ -135,7 +135,7 @@ protected.subtract(mammals) // should just leave protected fish
 
 
 // -------------------------------------
-// Inherited Behaviour
+// Set Inherited Functionality
 // -------------------------------------
 
 var removed: String = ""
@@ -153,7 +153,32 @@ for var i in chessPieces.startIndex..<chessPieces.endIndex
 }
 
 
+print ("\n-iterating over a set with forEach")
+chessPieces.forEach { print ($0) }
 
+
+
+
+// -------------------------------------
+// Option Sets
+// -------------------------------------
+
+struct TextStyle: OptionSetType {
+    let rawValue: UInt8
+    
+    static let Bold      = TextStyle(rawValue: 1)
+    static let Italic    = TextStyle(rawValue: 2)
+    static let Underline = TextStyle(rawValue: 4)
+    static let Outline   = TextStyle(rawValue: 8)
+}
+
+var style: TextStyle = []
+style = [.Bold, .Italic]
+style.insert(.Underline)
+style.remove(.Bold)
+if style.contains(.Outline) {
+    // do something
+}
 
 
 

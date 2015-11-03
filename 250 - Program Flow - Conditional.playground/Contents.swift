@@ -45,6 +45,17 @@ else
 
 
 // ------------------------------------------
+// if-case
+// ------------------------------------------
+
+var age = 23
+if case 16...35 = age {
+    print ("You're our target demographic!")
+}
+
+
+
+// ------------------------------------------
 // guard-else
 // ------------------------------------------
 
@@ -130,7 +141,7 @@ print ("\nmatching a range in a case claise")
 var marbles = 600
 switch marbles {
 case 0:
-    print("you've lost your marbles!")
+    print("You've lost your marbles!")
 case 1:
     print("I see you have a marble")
 case 2...5:
@@ -144,27 +155,29 @@ default:
 }
 
 
+
+
 // ------------------------------------------
 // Using tuples in a case clause
 // ------------------------------------------
 
 print ("\nusing tuples in a case clause")
 
-var year = 9                 // 7-10
-var gender: Character = "M"  // "M" or "F"
-var weekday = "Fri"          // "Mon" through "Fri"
+var year = 9                     // 7-10
+var house: String = "Columbus"   // "Columbus", or "Cook"
+var weekday = "Fri"              // "Mon" through "Fri"
 
-var record = (gender, year, weekday)
+var record = (house, year, weekday)
 
 switch record {
-case ("M", 7...8, "Mon"):
+case ("Columbus", 7...8, "Mon"):
     print ("Sports: Cricket")
-case ("F", 7...8, "Mon"):
+case ("Cook", 7...8, "Mon"):
     print ("Sports: Netball")
-case ("M", 9...10, "Tue"):
+case ("Columbus", 9...10, "Tue"):
     print ("Sports: Football")
-case ("F", 9...10, "Tue"):
-    print ("Sports: Softball")
+case ("Cook", 9...10, "Tue"):
+    print ("Sports: Tennis")
 case (_, 7...8, "Wed"):
     print ("Music")
 case (_, 9...10, "Wed"):
@@ -186,16 +199,16 @@ default:
 print ("\nvalue binding in a case clause")
 
 weekday = "Thu"
-record = (gender, year, weekday)
+record = (house, year, weekday)
 
 switch record {
-case ("M", 7...8, "Mon"):
+case ("Columbus", 7...8, "Mon"):
     print ("Sports: Cricket")
-case ("F", 7...8, "Mon"):
+case ("Cook", 7...8, "Mon"):
     print ("Sports: Netball")
-case ("M", 9...10, "Tue"):
+case ("Columbus", 9...10, "Tue"):
     print ("Sports: Football")
-case ("F", 9...10, "Tue"):
+case ("Cook", 9...10, "Tue"):
     print ("Sports: Softball")
 case (_, 7...8, "Wed"):
     print ("Music")
@@ -218,16 +231,16 @@ default:
 print ("\nthe where qualifier in a case clause")
 
 year = 7
-record = (gender, year, weekday)
+record = (house, year, weekday)
 
 switch record {
-case ("M", 7...8, "Mon"):
+case ("Columbus", 7...8, "Mon"):
     print ("Sports: Cricket")
-case ("F", 7...8, "Mon"):
+case ("Cook", 7...8, "Mon"):
     print ("Sports: Netball")
-case ("M", 9...10, "Tue"):
+case ("Columbus", 9...10, "Tue"):
     print ("Sports: Football")
-case ("F", 9...10, "Tue"):
+case ("Cook", 9...10, "Tue"):
     print ("Sports: Softball")
 case (_, 7...8, "Wed"):
     print ("Music")

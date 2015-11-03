@@ -66,12 +66,27 @@ for processor in cpusMaster.values {
 
 
 // ------------------------------------------
-// Inherited Behaviour
+// Dictionary Inherited Functionality
 // ------------------------------------------
 
 var end = cpusMaster.endIndex
 var start = cpusMaster.startIndex
 start == end
+
+print ("\n-dropFirst")
+let subset1 = cpusMaster.dropFirst()
+for (key, value) in subset1 {
+    print ("key: ", key, ", value: ", value)
+}
+
+print ("\n-dropLast")
+let subset2 = cpusMaster.dropLast()
+for (key, value) in subset2 {
+    print ("key: ", key, ", value: ", value)
+}
+
+print ("\n-forEach")
+cpusMaster.forEach { print ($0.0, "has a", $0.1) }
 
 
 cpus = cpusMaster
@@ -90,6 +105,7 @@ let (k2, v2) = cpus.removeAtIndex(start.successor())
 k2
 v2
 cpus
+
 
 
 

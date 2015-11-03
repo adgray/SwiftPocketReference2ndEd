@@ -48,6 +48,10 @@ astring >= name
 astring.hasPrefix("He")
 astring.hasSuffix("lo")
 
+// string comparison via sorting
+var strArr = ["zebra", "Billy", "albert", "bob", "äric", "aaron", "able", "Zero"]
+strArr.sort()
+
 
 
 // ------------------------------------------
@@ -95,6 +99,20 @@ uString.utf8.count
 uString.utf16.count
 uString.unicodeScalars.count
 
+var charIndx8 = uString.utf8.startIndex
+uString.utf8[charIndx8++]
+uString.utf8[charIndx8++]
+uString.utf8[charIndx8++]
+
+var charIndx16 = uString.utf16.startIndex
+uString.utf16[charIndx16++]
+uString.utf16[charIndx16++]
+
+var charIndxUS = uString.unicodeScalars.startIndex
+uString.unicodeScalars[charIndxUS++]
+uString.unicodeScalars[charIndxUS++]
+
+
 
 print ("\n-character-level access in strings")
 var str = "Swift"
@@ -106,13 +124,13 @@ for i in str.characters {
 print ("\n-accessing characters by index")
 var idx = str.utf8.startIndex
 while (idx != str.utf8.endIndex) {
-    print (str.utf8[idx])
+    print (str.utf8[idx], terminator: ", ")
     idx = idx.successor()
 }
+print ("")
 
 let sought = Character("Y")
-if let foundAt = "New York".characters.indexOf(sought)
-{
+if let foundAt = "New York".characters.indexOf(sought) {
     print (sought, "found at position", foundAt)
 }
 
@@ -146,7 +164,6 @@ let message = "Hi there %name%, welcome to the party!"
 let tag = "%name%"
 let guest = "Lisa"
 let greeting = message.stringByReplacingOccurrencesOfString(tag, withString: guest)
-
 
 
 

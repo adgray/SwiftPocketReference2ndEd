@@ -1,14 +1,14 @@
 # Swift Pocket Reference, 2nd Ed
 
-**THIS IS A WORK IN PROGRESS. THIS BOOK IS IN EARLY RELEASE, AND NOT YET FINAL.**
-
-Code and resources from my upcoming O'Reilly title "Swift Pocket Reference Second Edition", published by O'Reilly Media.
+Code and resources from my upcoming O'Reilly title ["Swift Pocket Reference Second Edition"](http://shop.oreilly.com/product/0636920045618.do "Swift Pocket Reference Second Edition"), published by O'Reilly Media.
 
 The code here generally follows the examples from the book, in the same order. In some places, the code includes additional comments that were removed from the text for reasons of space. 
 
 The code is presented here in the form of Xcode Playgrounds, which allows for simple experimentation and tinkering with instant results. 
 
 In some Playgrounds, you should expose the console output pane to see the output of 'print' command. To do that, open the View menu, and choose Debug Area -> Show Debug Area, or use the keyboard shortcut Command-Shift-Y.
+
+This branch was tested against Xcode 7.0 and Swift 2.0.
 
 ## License
 

@@ -104,7 +104,7 @@ var generalFunc: (Int) -> Int
 
 func addOne (i: Int) -> Int { return i+1 }
 func addTwo (i: Int) -> Int { return i+2 }
-func times8 (i: Int) -> Int { return i * 8 }
+func times8 (i: Int) -> Int { return i*8 }
 generalFunc = addOne
 
 addOne(4)      // returns 5

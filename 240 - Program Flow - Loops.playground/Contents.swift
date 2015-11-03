@@ -60,6 +60,32 @@ print (out)
 // prints "1, 2, 4, 5, 7, 8, 10, 11, 13, 14"
 
 
+print ("\nfor-in loop with case clause")
+let processors: [(name: String, buswidth: Int)] = [
+    ("Z80", 8),
+    ("16032", 16),
+    ("80286", 16),
+    ("6502", 8)
+]
+for case let (name, 8) in processors {
+    print ("the", name, "has a bus width of 8 bits")
+}
+
+
+print ("\nfor-in loop with enum")
+enum NetworkAddress {
+    case MAC(String)
+    case IPv4(UInt8, UInt8, UInt8, UInt8)
+}
+let addresses = [
+    NetworkAddress.IPv4(192, 168, 0, 1),
+    NetworkAddress.IPv4(8, 8, 8, 8),
+    NetworkAddress.MAC("00:DE:AD:BE:EF:00")
+]
+for case let .IPv4(a, b, c, d) in addresses {
+    print (a, b, c, d, separator:".")
+}
+
 
 // ------------------------------------------
 // while loops

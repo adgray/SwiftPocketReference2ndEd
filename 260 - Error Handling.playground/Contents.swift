@@ -11,7 +11,7 @@
 // ------------------------------------------
 
 
-enum inputError: ErrorType
+enum InputError: ErrorType
 {
     case notAnInt
     case notAFloat
@@ -24,7 +24,7 @@ func sumArrayOfStrInts(strs: [String]) throws -> Int
     {
         guard let strAsInt = Int(str) else
         {
-            throw inputError.notAnInt
+            throw InputError.notAnInt
         }
         tot += strAsInt
     }
@@ -39,7 +39,7 @@ func showCatch(nums: [String])
         let result = try sumArrayOfStrInts(nums)
         print ("Sum of ints is", result)
     }
-    catch inputError.notAnInt
+    catch InputError.notAnInt
     {
         print ("Input error: string not an integer literal")
     }
