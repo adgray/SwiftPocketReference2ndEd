@@ -12,7 +12,7 @@ This branch was tested against Xcode 7.0 and Swift 2.0.
 
 ## New Edition
 
-The third edition of the book is now available on ["Safari Books Online"](https://www.safaribooksonline.com/library/view/swift-pocket-reference/9781491981702/) and the updated sample code is available at ["Github"](https://github.com/adgray/SwiftPocketReference3rdEd).
+The third edition of the book is now available on [Safari Books Online](https://www.safaribooksonline.com/library/view/swift-pocket-reference/9781491981702/) and the updated sample code is available at [Github](https://github.com/adgray/SwiftPocketReference3rdEd).
 
 ## License
 
